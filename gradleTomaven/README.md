@@ -1,6 +1,6 @@
 # Usage:
 Maven的本地依赖仓的文件结构与Gradle的本地依赖仓结构相似，让Gradle直接识别本地的maven仓的包可以使用这个脚本
-# Command:
+# Steps:
 首先在build.gradle文件里添加如下代码
 ```
 buildscript{
