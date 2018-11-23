@@ -29,7 +29,7 @@ def read_data(path,id,mirrorOf):
         print('<-----------trun {} ----------->'.format(count))
         print('<-----------trun {} ----------->'.format(count))
         print('<-----------trun {} ----------->'.format(count))
-        os.system('mvn clean install > {}'.format(path))
+        os.system('mvn clean install -Pfast > {}'.format(path))
         with open((os.path.join(path)), 'r') as f:
             data = f.read()
         urls = regex407.findall(data)
@@ -48,6 +48,7 @@ def read_data(path,id,mirrorOf):
                 os.system('wget {}'.format(url))
                 os.system('rm -rf ~/.m2/repository/{}'.format(file_path))
                 os.system('cp -rf {} ~/.m2/repository/{}/'.format(file_path, dir_path))
+                os.system('rm -rf ~/.m2/repository/{}/_remote.repositories'.format(dir_path))
                 os.system('mv {} out/'.format(file_path))
 
                 #print the file you need
